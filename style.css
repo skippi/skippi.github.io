@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "Cascadia Mono";
+  font-style: normal;
+  src: local("Cascadia Mono"), url("CascadiaMono.woff2");
+}
+
+:root {
+  --color-primary: rgb(215, 186, 125);
+  --color-secondary: rgb(212, 212, 212);
+}
+
+html {
+  color: var(--color-secondary);
+  background: rgb(30, 30, 30);
+  font-family: "Cascadia Mono";
+}
+
+main {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-rows: 1fr 1.25fr auto;
+  grid-template-columns: 1fr 6fr 4fr 1fr;
+  grid-template-areas:
+    ". logo logo ."
+    ". splash . ."
+    ". highlights highlights .";
+}
+
+a {
+  color: var(--color-primary);
+}
+
+.logo {
+  display: block;
+  font-size: 4.5rem;
+  font-weight: 600;
+  grid-area: logo;
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.splash {
+  font-size: 2.25rem;
+  font-weight: 500;
+  grid-area: splash;
+  line-height: 1.4;
+}
+
+.highlights {
+  grid-area: highlights;
+}
+
+.highlights-header {
+  color: rgb(156, 220, 254);
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.highlights-body {
+  background: rgb(39, 39, 39);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.highlights-entry {
+  display: grid;
+  padding: 24px;
+  grid-template-columns: 1fr 5fr 5fr 1fr;
+  grid-template-areas: ". title description .";
+}
+
+.highlights-title {
+  display: block;
+  font-size: 2.25rem;
+  font-weight: 500;
+  grid-area: title;
+}
+
+.highlights-description {
+  font-size: 1.5rem;
+  grid-area: description;
+}
