@@ -31,7 +31,8 @@ main {
     ". name name ."
     ". splash . ."
     ". projects projects ."
-    ". contributions contributions .";
+    ". contributions contributions ."
+    ". contacts contacts .";
 }
 
 h1 {
@@ -51,6 +52,13 @@ h2 {
 
 a {
   color: var(--color-primary);
+}
+
+#contacts {
+  font-size: 1.5rem;
+  font-weight: 500;
+  grid-area: contacts;
+  margin-top: 2rem;
 }
 
 #name {
