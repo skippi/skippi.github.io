@@ -28,14 +28,16 @@ main {
     ". contributions contributions .";
 }
 
+h1 {
+  font-size: 4.5rem;
+  font-weight: 600;
+}
+
 a {
   color: var(--color-primary);
 }
 
 #name {
-  display: block;
-  font-size: 4.5rem;
-  font-weight: 600;
   grid-area: name;
 }
 
