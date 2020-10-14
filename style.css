@@ -33,6 +33,12 @@ h1 {
   font-weight: 600;
 }
 
+h2 {
+  color: rgb(156, 220, 254);
+  font-size: 3rem;
+  font-weight: 600;
+}
+
 a {
   color: var(--color-primary);
 }
@@ -58,14 +64,6 @@ a {
 
 #projects {
   grid-area: projects;
-}
-
-.highlights-header {
-  color: rgb(156, 220, 254);
-  font-size: 3rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 
 .highlights-body {
