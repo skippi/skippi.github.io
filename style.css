@@ -22,7 +22,7 @@ main {
   grid-template-rows: 1fr 1fr auto;
   grid-template-columns: 1fr 6fr 4fr 1fr;
   grid-template-areas:
-    ". logo logo ."
+    ". name name ."
     ". splash . ."
     ". projects projects ."
     ". contributions contributions .";
@@ -32,29 +32,29 @@ a {
   color: var(--color-primary);
 }
 
-.logo {
+#name {
   display: block;
   font-size: 4.5rem;
   font-weight: 600;
-  grid-area: logo;
+  grid-area: name;
 }
 
-.logo a {
+#name a {
   text-decoration: none;
 }
 
-.splash {
+#splash {
   font-size: 2.25rem;
   font-weight: 500;
   grid-area: splash;
   line-height: 1.4;
 }
 
-.contributions {
+#contributions {
   grid-area: contributions;
 }
 
-.projects {
+#projects {
   grid-area: projects;
 }
 
