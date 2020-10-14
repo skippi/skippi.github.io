@@ -19,12 +19,13 @@ main {
   margin-top: 3rem;
   margin-bottom: 3rem;
   display: grid;
-  grid-template-rows: 1fr 1.25fr auto;
+  grid-template-rows: 1fr 1fr auto;
   grid-template-columns: 1fr 6fr 4fr 1fr;
   grid-template-areas:
     ". logo logo ."
     ". splash . ."
-    ". highlights highlights .";
+    ". projects projects ."
+    ". contributions contributions .";
 }
 
 a {
@@ -49,14 +50,19 @@ a {
   line-height: 1.4;
 }
 
-.highlights {
-  grid-area: highlights;
+.contributions {
+  grid-area: contributions;
+}
+
+.projects {
+  grid-area: projects;
 }
 
 .highlights-header {
   color: rgb(156, 220, 254);
   font-size: 3rem;
   font-weight: 600;
+  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
