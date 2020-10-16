@@ -8,11 +8,12 @@
   <body>
     <main>
       <section id="name">
-        <h1><a href="index.html">skippi</a></h1>
+        <h1><a class="intro" href="index.html">skippi</a></h1>
       </section>
       <section id="splash">
-        Engineering interactive applications for
-        <a href="https://github.com/skippi">open source</a> development.
+        <span class="intro">Engineering interactive applications for</span>
+        <a href="https://github.com/skippi" class="intro">open source</a>
+        <span class="intro">development.</span>
       </section>
       <section id="projects">
         <h2>projects</h2>
@@ -76,5 +77,48 @@
         <a href="https://discord.com/users/177888205536886784/">Discord</a>.
       </footer>
     </main>
+    <script type="application/javascript">
+      const INTRO_CHARS = "1234567890-=!@#$%^&*()_+[]{}\\|`~;:,.<>/?";
+
+      function replaceAt(str, index, replacement) {
+        return (
+          str.substr(0, index) +
+          replacement +
+          str.substr(index + replacement.length)
+        );
+      }
+
+      function genChar() {
+        return INTRO_CHARS.charAt(
+          Math.floor(Math.random() * INTRO_CHARS.length)
+        );
+      }
+
+      function mutTextChar(elem, index, count, finalChar, timeout) {
+        if (count == 0) {
+          elem.innerText = replaceAt(elem.innerText, index, finalChar);
+          return;
+        }
+        elem.innerText = replaceAt(elem.innerText, index, genChar());
+        setTimeout(function () {
+          mutTextChar(elem, index, count - 1, finalChar, timeout);
+        }, timeout);
+      }
+
+      function intro(elem) {
+        for (let i = 0; i < elem.innerText.length; ++i) {
+          const c = elem.innerText.charAt(i);
+          if (/\s/.test(c)) {
+            continue;
+          }
+          const timeout = Math.floor(30 + Math.random() * 65);
+          mutTextChar(elem, i, Math.floor(2 + Math.random() * 15), c, timeout);
+        }
+      }
+
+      for (const elem of document.getElementsByClassName("intro")) {
+        intro(elem);
+      }
+    </script>
   </body>
 </html>
