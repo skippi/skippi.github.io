@@ -7,10 +7,10 @@
   </head>
   <body>
     <main>
-      <section id="name" class="intro">
+      <section id="name">
         <h1><a href="index.html">skippi</a></h1>
       </section>
-      <section id="splash" class="intro">
+      <section id="splash">
         <span>Engineering interactive applications for</span>
         <a href="https://github.com/skippi">open source</a>
         <span>development.</span>
@@ -94,6 +94,14 @@
         );
       }
 
+      function genString(length) {
+        const ans = [];
+        for (let i = 0; i < length; ++i) {
+          ans.push(genChar());
+        }
+        return ans;
+      }
+
       function mutTextChar(node, index, count, finalChar, timeout) {
         if (count == 0) {
           node.nodeValue = replaceAt(node.nodeValue, index, finalChar);
@@ -105,34 +113,37 @@
         }, timeout);
       }
 
-      function shuffle(elem) {
+      function shuffle(elem, delay) {
         const stack = [...elem.childNodes];
         while (stack.length != 0) {
           const node = stack.pop();
           if (!node) continue;
           if (node.nodeType === 3) {
+            const oldText = node.nodeValue;
+            node.nodeValue = node.nodeValue.replace(/[^\s]/g, genChar);
             for (let i = 0; i < node.nodeValue.length; ++i) {
-              const c = node.nodeValue.charAt(i);
+              const c = oldText.charAt(i);
               if (/\s/.test(c)) {
                 continue;
               }
               const timeout = Math.floor(30 + Math.random() * 65);
-              mutTextChar(
-                node,
-                i,
-                Math.floor(2 + Math.random() * 15),
-                c,
-                timeout
-              );
+              setTimeout(function () {
+                mutTextChar(
+                  node,
+                  i,
+                  Math.floor(2 + Math.random() * 15),
+                  c,
+                  timeout
+                );
+              }, delay);
             }
           }
           stack.push(...node.childNodes);
         }
       }
 
-      for (const elem of document.getElementsByClassName("intro")) {
-        shuffle(elem);
-      }
+      shuffle(document.getElementById("name"), 0);
+      shuffle(document.getElementById("splash"), 500);
     </script>
   </body>
 </html>
