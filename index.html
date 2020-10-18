@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>skippi</title>
+    <meta charset="UTF-8" />
+    <meta name"viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <section id="name">
+        <h1><a href="index.html">skippi</a></h1>
+      </section>
+      <section id="splash">
+        <span>Engineering interactive applications for</span>
+        <a href="https://github.com/skippi">open source</a>
+        <span>development.</span>
+      </section>
+      <section id="jobs">
+        <h2>jobs</h2>
+        <section class="highlights-body">
+          <article class="highlights-entry">
+            <div class="highlights-title">
+              <h3>
+                <a href="https://www.quorumsoftware.com/">Quorum Software</a>
+              </h3>
+              <br />
+              <p>Summer 2019</p>
+            </div>
+            <div class="highlights-description">
+              Continued working on Flow-Cal primary measurement application
+              (Quorum acquired Flow-Cal in early 2019). I started reforms
+              towards modernizing our C++ code. I profiled and optimized parts
+              of our hydrocarbon telemetry systems by over 20% using
+              SQLDeveloper and AQTime to profile slowdowns.
+            </div>
+          </article>
+          <article class="highlights-entry">
+            <div class="highlights-title">
+              <h3><a href="https://flowcal.com/">Flow-Cal</a></h3>
+              <br />
+              <p>Summer 2018</p>
+            </div>
+            <div class="highlights-description">
+              Resolved business and devops issues in flagship measurement
+              application using C++, C#, Embarcadero, WPF, OracleDB, GitHub, and
+              Jenkins. I also helped migrate a 2,000,000 LOC legacy codebase
+              from Borland C++ to Clang C++ through vigorous code reviews.
+            </div>
+          </article>
+        </section>
+      </section>
+      <section id="projects">
+        <h2>projects</h2>
+        <section class="highlights-body">
+          <article class="highlights-entry">
+            <div class="highlights-title">
+              <h3><a href="https://github.com/skippi/vimty">vimty</a></h3>
+            </div>
+            <div class="highlights-description">
+              Modern interactive typing test with vim vocabulary. Powered with
+              react and typescript.
+            </div>
+          </article>
+          <article class="highlights-entry">
+            <div class="highlights-title">
+              <h3><a href="https://github.com/skippi/osumix">osumix</a></h3>
+            </div>
+            <div class="highlights-description">
+              Audio mixer for superimposing music and rhythm game sounds.
+              Powered with python and librosa.
+            </div>
+          </article>
+          <article class="highlights-entry">
+            <div class="highlights-title">
+              <h3><a href="https://github.com/skippi/vnseg">vnseg</a></h3>
+            </div>
+            <div class="highlights-description">
+              Experimental NLP web application for semantic parsing of
+              vietnamese words. Powered with react, flask, and keras.
+            </div>
+          </article>
+          <article class="highlights-entry">
+            <div class="highlights-title">
+              <h3>
+                <a href="https://github.com/skippi/skippi.github.io"
+                  >portfolio</a
+                >
+              </h3>
+            </div>
+            <div class="highlights-description">
+              This exact webpage, but it's a github repository.
+            </div>
+          </article>
+        </section>
+      </section>
+      <section id="contributions">
+        <h2>contributions</h2>
+        <section class="highlights-body">
+          <article class="highlights-entry">
+            <div class="highlights-title">
+              <h3><a href="https://github.com/Kraigie/nostrum">nostrum</a></h3>
+            </div>
+            <div class="highlights-description">
+              Implemented missing api endpoints. Developed permission and
+              snowflake utility modules.
+            </div>
+          </article>
+          <article class="highlights-entry">
+            <div class="highlights-title">
+              <h3><a href="https://github.com/neovim/neovim">neovim</a></h3>
+            </div>
+            <div class="highlights-description">
+              Maintained vim compatibility by porting vim patches.
+            </div>
+          </article>
+        </section>
+      </section>
+      <footer id="contacts">
+        You can follow me on
+        <a href="https://twitter.com/skippi_io">Twitter</a> and
+        <a href="https://medium.com/@jbtcao">Medium</a>. I'm available via
+        <a href="mailto:jbtcao@gmail.com">Email</a> and
+        <a href="https://discord.com/users/177888205536886784/">Discord</a>.
+        <br />
+        <br />
+        I'm also available for hire!
+        <a href="mailto:jbtcao@gmail.com">Email</a> me if interested.
+      </footer>
+    </main>
+    <script type="application/javascript">
+      const INTRO_CHARS = "1234567890-=!@#$%^&*()_+[]{}\\|`~;:,.<>/?";
+
+      function replaceAt(str, index, replacement) {
+        return (
+          str.substr(0, index) +
+          replacement +
+          str.substr(index + replacement.length)
+        );
+      }
+
+      function genChar() {
+        return INTRO_CHARS.charAt(
+          Math.floor(Math.random() * INTRO_CHARS.length)
+        );
+      }
+
+      function genString(length) {
+        const ans = [];
+        for (let i = 0; i < length; ++i) {
+          ans.push(genChar());
+        }
+        return ans;
+      }
+
+      function mutTextChar(node, index, count, finalChar, timeout) {
+        if (count == 0) {
+          node.nodeValue = replaceAt(node.nodeValue, index, finalChar);
+          return;
+        }
+        node.nodeValue = replaceAt(node.nodeValue, index, genChar());
+        setTimeout(function () {
+          mutTextChar(node, index, count - 1, finalChar, timeout);
+        }, timeout);
+      }
+
+      function shuffle(elem, delay) {
+        const stack = [...elem.childNodes];
+        while (stack.length != 0) {
+          const node = stack.pop();
+          if (!node) continue;
+          if (node.nodeType === 3) {
+            const oldText = node.nodeValue;
+            node.nodeValue = node.nodeValue.replace(/[^\s]/g, genChar);
+            for (let i = 0; i < node.nodeValue.length; ++i) {
+              const c = oldText.charAt(i);
+              if (/\s/.test(c)) {
+                continue;
+              }
+              const timeout = Math.floor(30 + Math.random() * 65);
+              setTimeout(function () {
+                mutTextChar(
+                  node,
+                  i,
+                  Math.floor(5 + Math.random() * 5),
+                  c,
+                  timeout
+                );
+              }, delay);
+            }
+          }
+          stack.push(...node.childNodes);
+        }
+      }
+
+      window.addEventListener(
+        "load",
+        function () {
+          shuffle(document.getElementById("name"), 0);
+          shuffle(document.getElementById("splash"), 350);
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

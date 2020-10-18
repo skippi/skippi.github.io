@@ -1,0 +1,118 @@
+@font-face {
+  font-family: "Cascadia Mono";
+  font-style: normal;
+  src: local("Cascadia Mono"), url("CascadiaMono.woff2");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: rgb(215, 186, 125);
+  --color-secondary: rgb(212, 212, 212);
+}
+
+html {
+  color: var(--color-secondary);
+  background: rgb(30, 30, 30);
+  font-family: "Cascadia Mono";
+}
+
+main {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 6fr 4fr 1fr;
+  grid-template-areas:
+    ". name name ."
+    ". splash . ."
+    ". jobs jobs ."
+    ". projects projects ."
+    ". contributions contributions ."
+    ". contacts contacts .";
+}
+
+h1 {
+  font-size: 4.5rem;
+  font-weight: 600;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+h2 {
+  color: rgb(156, 220, 254);
+  font-size: 3rem;
+  font-weight: 600;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+h3 {
+  color: var(--color-primary);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+#contacts {
+  font-size: 1.5rem;
+  font-weight: 500;
+  grid-area: contacts;
+  margin-top: 2rem;
+}
+
+#name {
+  grid-area: name;
+}
+
+#name a {
+  text-decoration: none;
+}
+
+#splash {
+  font-size: 2.25rem;
+  font-weight: 500;
+  grid-area: splash;
+  line-height: 1.4;
+}
+
+#contributions {
+  grid-area: contributions;
+}
+
+#jobs {
+  grid-area: jobs;
+}
+
+#projects {
+  grid-area: projects;
+}
+
+.highlights-body {
+  background: rgb(39, 39, 39);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.highlights-entry {
+  display: grid;
+  padding: 2rem;
+  grid-template-columns: 1fr 12fr 12fr 1fr;
+  grid-template-areas: ". title description .";
+  font-size: 1.5rem;
+}
+
+.highlights-title {
+  grid-area: title;
+}
+
+.highlights-description {
+  font-size: 1.5rem;
+  grid-area: description;
+}
