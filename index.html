@@ -142,8 +142,14 @@
         }
       }
 
-      shuffle(document.getElementById("name"), 0);
-      shuffle(document.getElementById("splash"), 350);
+      window.addEventListener(
+        "load",
+        function () {
+          shuffle(document.getElementById("name"), 0);
+          shuffle(document.getElementById("splash"), 350);
+        },
+        false
+      );
     </script>
   </body>
 </html>
