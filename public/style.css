@@ -4,12 +4,6 @@
   src: local("Cascadia Mono"), url("CascadiaMono.woff2");
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 :root {
   --color-primary: rgb(215, 186, 125);
   --color-secondary: rgb(212, 212, 212);
