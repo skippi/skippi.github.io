@@ -8,7 +8,7 @@ html {
   color: #d4d4d4;
   background: rgb(30, 30, 30);
   font-family: "Cascadia Mono";
-  font-size: calc(100vh / 42);
+  font-size: 16px;
 }
 
 .statement {
