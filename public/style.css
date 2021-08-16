@@ -11,6 +11,14 @@ html {
   font-size: 16px;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  filter: brightness(75%);
+}
+
 .statement {
   color: #c586c0
 }
