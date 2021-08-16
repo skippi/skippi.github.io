@@ -15,7 +15,7 @@
   </head>
   <body>
     <div style="padding-left: 2px; padding-right: 2px;">
-      <div style="background-color: #1e1e1e; max-width: 60ch; padding-bottom: 4ch">
+      <div class="shuffle" style="background-color: #1e1e1e; max-width: 60ch; padding-bottom: 4ch">
         <div><span class="string">index.html</span>&nbsp;&nbsp;skippi</div>
         <br>
         <div>here be dragons</div>
@@ -144,7 +144,7 @@
       </div>
     </div>
     <script type="application/javascript">
-      const INTRO_CHARS = "1234567890-=!@#$%^&*()_+[]{}\\|`~;:,.<>/?";
+      const INTRO_CHARS = "1234567890=!@#$%^&*_+~\"'";
 
       function replaceAt(str, index, replacement) {
         return (
@@ -192,7 +192,7 @@
               if (/\s/.test(c)) {
                 continue;
               }
-              const timeout = Math.floor(30 + Math.random() * 65);
+              const timeout = Math.floor(5 + Math.random() * 35);
               setTimeout(function () {
                 mutTextChar(
                   node,
@@ -211,8 +211,10 @@
       window.addEventListener(
         "load",
         function () {
-          shuffle(document.getElementById("name"), 0);
-          shuffle(document.getElementById("splash"), 350);
+          document.querySelectorAll(".shuffle")
+                  .forEach(el => shuffle(el, 0));
+          // shuffle(document.getElementById("name"), 0);
+          // shuffle(document.getElementById("splash"), 350);
         },
         false
       );
