@@ -117,3 +117,15 @@ a {
   font-size: 1.5rem;
   grid-area: description;
 }
+
+.statement {
+  color: #c586c0
+}
+
+.string {
+  color: #ce9178
+}
+
+.identifier {
+  color: #9cdcfe;
+}
