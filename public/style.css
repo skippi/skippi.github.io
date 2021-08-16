@@ -19,7 +19,7 @@ html {
   color: var(--color-secondary);
   background: rgb(30, 30, 30);
   font-family: "Cascadia Mono";
-  font-size: calc(100vh / 36);
+  font-size: calc(100vh / 42);
 }
 
 main {
