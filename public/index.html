@@ -211,13 +211,7 @@
       window.addEventListener(
         "load",
         function () {
-          document.querySelectorAll(".shuffle")
-                  .forEach(el => shuffle(el, 0));
-          // shuffle(document.getElementById("name"), 0);
-          // shuffle(document.getElementById("splash"), 350);
-          const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-          const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-          console.log(vw, vh);
+          document.querySelectorAll(".shuffle").forEach(el => shuffle(el, 0));
         },
         false
       );
