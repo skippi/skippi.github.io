@@ -21,6 +21,15 @@
         <div>here be dragons</div>
         <br>
         <div style="display: flex; justify-content: space-between;">
+          <span class="statement">ARTICLES</span>
+          <span class="string">articles</span>
+        </div>
+        <br>
+        <div style="margin-left: 2ch;">
+          <div><a class="identifier" href="https://medium.com/@jbtcao/ideas-for-non-leader-vim-mappings-fd32a2769c87">Ideas for Non-Leader Vim Mappings</a></div>
+        </div>
+        <br>
+        <div style="display: flex; justify-content: space-between;">
           <span class="statement">PROJECTS</span>
           <span class="string">projects</span>
         </div>
@@ -211,13 +220,7 @@
       window.addEventListener(
         "load",
         function () {
-          document.querySelectorAll(".shuffle")
-                  .forEach(el => shuffle(el, 0));
-          // shuffle(document.getElementById("name"), 0);
-          // shuffle(document.getElementById("splash"), 350);
-          const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-          const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-          console.log(vw, vh);
+          document.querySelectorAll(".shuffle").forEach(el => shuffle(el, 0));
         },
         false
       );
